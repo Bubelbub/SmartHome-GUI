@@ -1,0 +1,2 @@
+bubelbub_smart_home_gui:
+    resource: "@BubelbubSmartHomeGUIBundle/Resources/config/routing.yml"

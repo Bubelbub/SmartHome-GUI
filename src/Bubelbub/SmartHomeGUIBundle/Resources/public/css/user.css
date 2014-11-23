@@ -1,0 +1,62 @@
+
+
+html, body {
+    background: url("http://farm4.staticflickr.com/3287/5747907420_21f85900a2_b.jpg")no-repeat scroll 0 0 / 100% 100% transparent !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	padding-top: 70px;
+}
+
+.userShortcut {
+	background: none;
+	border: none;
+	}
+
+.userShortcut .glyphicon {
+font-size: 300%;
+
+}
+
+.userTransparent {
+	    background: #000000; /* Fallback IE 6-8 */
+    background: rgba(0, 0, 0, .5);
+}
+
+.userSpacingCol {
+	padding: 5px;
+}
+
+.userDevicelist .lead {
+	padding: 10px 0 10px 0; margin: 0; padding: 0;
+}
+
+.userDevicelist dd, .userDevicelist dt {
+	padding: 10px;
+}
+
+/* Slider */
+.slider-handle {
+	background: #333;
+}
+
+/*Heizung*/
+.userHeizung .slider-track {
+	background: #C63;	
+}
+
+.userHeizung .slider-selection {
+	background: #36F;	
+}
+
+/*Rolladen*/
+.userRolladen .slider-track {
+	background:#CCC;	
+}
+
+.userRolladen .slider-selection {
+	background: #333;	
+}

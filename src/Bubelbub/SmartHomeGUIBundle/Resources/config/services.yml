@@ -1,0 +1,23 @@
+services:
+    bubelbub_smarthomegui.menu_builder:
+        class: Bubelbub\SmartHomeGUIBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory", "@service_container"]
+
+    bubelbub_smarthomegui.menu.main_left:
+        class: Knp\Menu\MenuItem
+        factory_service: bubelbub_smarthomegui.menu_builder
+        factory_method: createMainLeftMenu
+        tags:
+            - { name: knp_menu.menu, alias: main_left }
+
+    bubelbub_smarthomegui.menu.main_right:
+        class: Knp\Menu\MenuItem
+        factory_service: bubelbub_smarthomegui.menu_builder
+        factory_method: createMainRightMenu
+        tags:
+            - { name: knp_menu.menu, alias: main_right }
+
+    bubelbub_smarthomegui.twig.extension.tabindex:
+        class: Bubelbub\SmartHomeGUIBundle\Twig\TabindexExtension
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,4 @@
+bubelbub_smart_home_gui:
+    resource: "@BubelbubSmartHomeGUIBundle/Controller/"
+    type:     annotation
+    prefix:   /

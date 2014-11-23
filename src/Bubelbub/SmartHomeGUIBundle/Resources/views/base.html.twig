@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="SmartHome GUI for the shc">
+		<meta name="author" content="Bubelbub">
+		<link rel="icon shortcut" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+		<title>{% block title %}{{ 'desktop' | trans }}{% endblock %} - SmartHomeGUI</title>
+
+		{% block stylesheets %}
+			{% stylesheets
+							'bundles/bubelbubsmarthomegui/css/bootstrap.css'
+							'bundles/bubelbubsmarthomegui/css/user.css'
+							'bundles/bubelbubsmarthomegui/css/bootstrap-switch.css'
+							'bundles/bubelbubsmarthomegui/css/slider.css'
+				filter='cssrewrite'
+			%}
+				<link rel="stylesheet" href="{{ asset_url }}" />
+			{% endstylesheets %}
+		{% endblock stylesheets %}
+
+		{# Hintergundbild einbinden #}
+		<style type="text/css">
+			html, body {
+				background: url("http://farm4.staticflickr.com/3287/5747907420_21f85900a2_b.jpg")no-repeat scroll 0 0 / 100% 100% transparent !important;
+			}
+		</style>
+
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+	{% block body %}
+		<div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+					<span class="navbar-brand">SmartHome-GUI</span>
+				</div>
+				<div class="navbar-collapse collapse">
+					{{ knp_menu_render('main_left', {'currentClass': 'active'}) }}
+					{{ knp_menu_render('main_right', {'currentClass': 'active'}) }}
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content">
+			{% block content %}{% endblock content %}
+		</div>
+	{% endblock body %}
+
+	{% block javascripts %}
+		{% javascripts
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/modernizr.js'
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/jquery.js'
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/bootstrap.js'
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/bootstrap-switch.js'
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/bootstrap-slider.js'
+						'@BubelbubSmartHomeGUIBundle/Resources/public/js/SmartHome-GUI.js'
+		%}
+			<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+	{% endblock javascripts %}
+	</body>
+</html>

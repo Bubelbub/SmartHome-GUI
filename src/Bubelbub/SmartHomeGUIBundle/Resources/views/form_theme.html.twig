@@ -1,0 +1,111 @@
+{% extends "form_div_layout.html.twig" %}
+
+{#% block text_row %}
+	<tr>
+		<td style="text-align: right;">{{ form_label(form) }}</td>
+		<td>{{ form_widget(form) }}</td>
+	</tr>
+{% endblock %}
+
+{% block integer_row %}
+	<tr>
+		<td style="text-align: right;">{{ form_label(form) }}</td>
+		<td>{{ form_widget(form) }}</td>
+	</tr>
+{% endblock %#}
+
+{#{% block form_widget %}#}
+	{#{{ form_row(form) }}#}
+{#{% endblock %}#}
+
+{#<form role="form">#}
+	{#<div class="form-group">#}
+		{#<label for="centralName">Name</label>#}
+		{#<input type="" class="form-control" id="centralName" placeholder="Name der Zentrale">#}
+		{#{{ newForm.name }}#}
+	{#</div>#}
+	{#<div class="form-group">#}
+		{#<label for="centralHost">Name</label>#}
+		{#<input type="" class="form-control" id="centralHost" placeholder="IP-Adresse/Hostname">#}
+		{#{{ newForm.hostname }}#}
+	{#</div>#}
+	{#<div class="form-group">#}
+		{#<label for="central">Benutzername</label>#}
+		{#<input type="password" class="form-control" id="centralPassword" placeholder="Passwort">#}
+		{#{{ newForm.password }}#}
+	{#</div>#}
+	{#<div class="form-group">#}
+		{#<label for="centralPassword">Passwort</label>#}
+		{#<input type="password" class="form-control" id="centralPassword" placeholder="Passwort">#}
+		{#{{ newForm.password }}#}
+	{#</div>#}
+	{#<div class="form-group">#}
+		{#<div class="make-switch" data-on="success" data-off="danger" data-on-label="Aktiv" data-off-label="Deaktiv">#}
+			{#<input type="checkbox" checked>#}
+		{#</div>#}
+	{#</div>#}
+	{#<button type="button" class="btn btn-warning" data-dismiss="modal">Abbrechen</button> <button type="submit" class="btn btn-success">Speichern</button>#}
+{#</form>#}
+
+{% block form %}
+	{{ form_errors(form) }}
+	{{ form_start(form) }}
+	{% for children in form.children %}
+		{{ form_row(children) }}
+	{% endfor %}
+	{{ form_end(form) }}
+{% endblock %}
+
+{% block form_row -%}
+	{%- set noOpenDiv = attr.noOpenDiv|default(false) -%}
+	{%- set noCloseDiv = attr.noCloseDiv|default(false) -%}
+	{%- set attr = attr|merge({'tabindex': tabindex(), 'noOpenDiv': null, 'noCloseDiv': null}) -%}
+	{% if noOpenDiv == false -%}
+		<div class="form-group">
+	{%- endif %}
+		{{ form_label(form) }}
+		{{ form_widget(form, {attr: attr}) }}
+		{{ form_errors(form) }}
+	{% if noCloseDiv == false -%}
+		</div>
+	{%- endif %}
+{% endblock %}
+
+{% block button_row %}
+	{% spaceless %}
+		{%- set noOpenDiv = attr.noOpenDiv|default(false) -%}
+		{%- set noCloseDiv = attr.noCloseDiv|default(false) -%}
+		{%- set attr = attr|merge({'tabindex': tabindex(), 'noOpenDiv': null, 'noCloseDiv': null}) -%}
+		{%- if noOpenDiv == false -%}
+			<div>
+		{%- endif -%}
+			{{ form_widget(form, {attr: attr}) }}
+		{%- if noCloseDiv == false -%}
+			</div>
+		{%- endif -%}
+	{% endspaceless %}
+{% endblock button_row %}
+
+{% block form_widget_simple %}
+	{% if type|default('text') != 'hidden' %}{% set attr = attr|merge({'class': attr.class|default('') ~ ' form-control'}) %}{% endif %}
+	{{ parent() }}
+{% endblock %}
+
+{% block form_errors %}
+	{% spaceless %}
+		{% if errors|length > 0 %}
+			<ul style="margin: 0;">
+				{% for error in errors %}
+					<li>{{ error.message | trans }}</li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	{% endspaceless %}
+{% endblock form_errors %}
+
+{% block button_widget %}
+{% spaceless %}
+	{% set attr = attr|merge({'class': attr.class|default('') ~ ' btn'}) %}
+	{{ parent() }}
+{% endspaceless %}
+{% endblock %}

@@ -5,9 +5,20 @@ app/bootstrap*
 vendor/*
 */logs/*
 */cache/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
 web/uploads/*
 web/bundles/*
+/build/
+/bin/
+/composer.phar
 
 # Configuration files
 app/config/parameters.ini
 app/config/parameters.yml
+
+.idea/
+cache/
+web/js/
+web/css/
+*.iml
