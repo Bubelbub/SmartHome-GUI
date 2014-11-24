@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cab0341857a8689c0120cae3cef3204c",
+    "hash": "cbf9261c528c94875702f04bcbbe06b5",
     "packages": [
         {
             "name": "bubelbub/smarthome-php",
@@ -12,8 +12,14 @@
             "target-dir": "Bubelbub/SmartHomePHP",
             "source": {
                 "type": "git",
-                "url": "C:\\xampp\\htdocs\\smarthome-php",
-                "reference": "4bf0d54a0cabed8060e5b3e1f0a29b59b47d6cab"
+                "url": "https://github.com/Bubelbub/SmartHome-PHP.git",
+                "reference": "d0e2a043f5f13615ff1a8fba97712d7ce57a493f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bubelbub/SmartHome-PHP/zipball/d0e2a043f5f13615ff1a8fba97712d7ce57a493f",
+                "reference": "d0e2a043f5f13615ff1a8fba97712d7ce57a493f",
+                "shasum": ""
             },
             "archive": {
                 "exclude": [
@@ -53,7 +59,11 @@
                 "smart",
                 "smarthome"
             ],
-            "time": "2014-11-23 13:44:33"
+            "support": {
+                "source": "https://github.com/Bubelbub/SmartHome-PHP/tree/master",
+                "issues": "https://github.com/Bubelbub/SmartHome-PHP/issues"
+            },
+            "time": "2014-11-23 15:13:20"
         },
         {
             "name": "doctrine/annotations",
@@ -450,7 +460,9 @@
             "authors": [
                 {
                     "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
                 },
                 {
                     "name": "Symfony Community",
@@ -521,7 +533,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -575,7 +587,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
