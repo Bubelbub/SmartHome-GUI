@@ -55,7 +55,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "C:\\xampp\\htdocs\\smarthome-php"
+            "url": "https://github.com/Bubelbub/SmartHome-PHP.git"
         }
     ]
 }
