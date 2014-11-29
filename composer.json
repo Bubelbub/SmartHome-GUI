@@ -51,11 +51,5 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "C:\\xampp\\htdocs\\smarthome-php"
-        }
-    ]
+    }
 }
